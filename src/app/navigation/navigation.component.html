@@ -1,0 +1,50 @@
+<mat-sidenav-container class="sidenav-container">
+    <mat-sidenav #drawer [ngClass]="(isHandset$ | async) ? 'sidenavMob' : 'sidenav'" fixedInViewport
+        [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'" [mode]="(isHandset$ | async) ? 'over' : 'side'"
+        [opened]="(isHandset$ | async) === false">
+
+        <div class="p-3">
+            <div class="d-flex justify-content-start align-items-center">
+                <div style="margin-right: 15px;"><img src="assets/logo.svg" alt=""></div>
+                <div>
+                    <div class="logo-header">BULK TOP UP</div>
+                    <div class="logo-sub-header">Payment Gatway</div>
+                </div>
+            </div>
+        </div>
+        <hr>
+        <div class="p-3 d-flex flex-column align-items-center">
+            <img class="mb-2" src="assets/profile-img.png" alt="">
+            <div class="profile-header">Bulk Top Up Admin</div>
+            <div class="profile-subheader">{{currentDate}}</div>
+        </div>
+        <hr>
+        <mat-nav-list>
+            <a style=" border-left: 5px solid #82C2FC;" mat-list-item>
+                <div class="d-flex align-items-center justify-content-center w-100 nav-menu-item">
+                    <img style="margin-right: 10px;" src="assets/service-config.svg" alt="">
+                    <div>
+                        Service Configuration
+                    </div>
+                </div>
+            </a>
+        </mat-nav-list>
+        <mat-toolbar class="footer">
+            <div>2021 © Bulk Topup</div>
+            <div>ALL Rights Reserved.</div>
+        </mat-toolbar>
+    </mat-sidenav>
+    <mat-sidenav-content>
+        <mat-toolbar class="top-navigation">
+         <img (click)="drawer.toggle()" style="cursor: pointer;" src="assets/nav-toggle.svg" alt="">
+         <img src="assets/profile-min.png" alt="">
+        </mat-toolbar>
+        <mat-toolbar class="bc-bar">
+            <div class="bc-header">Service Type Configuration</div>
+            <div class="bc-page">Login / Dashboard</div>
+        </mat-toolbar>
+
+        <ng-content></ng-content>
+
+    </mat-sidenav-content>
+</mat-sidenav-container>

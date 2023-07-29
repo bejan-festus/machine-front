@@ -1,0 +1,107 @@
+.sidenav-container {
+    height: 100%;
+}
+
+.sidenav {
+    width: 300px;
+    background-color: #00274F;
+    color: white;
+}
+
+
+.sidenav .mat-toolbar {
+    background: inherit;
+}
+
+.mat-nav-list {
+    width: 60px;
+    position: fixed;
+}
+
+@media screen and (max-width: 992px) {
+    .mat-nav-list {
+        position: unset;
+    }
+}
+
+:host ::ng-deep .mat-list-item-content {
+    padding: unset !important;
+}
+
+.top-navigation {
+    height: 60px;
+    background-color: #ffffff;
+    position: sticky;
+    top: 0;
+    z-index: 1;
+    // box-shadow: 0px 4px 4px rgba(228, 228, 228, 0.25);
+    border-bottom: 1px solid #eff2f5;
+    // margin-bottom: 20px;
+    display: flex;
+    justify-content: space-between;
+    z-index: 10;
+    padding: 0px 20px;
+}
+
+
+.bc-bar {
+    height: 50px;
+    background-color: #E5E5E5;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.bc-header{
+font-size: 20px;
+font-weight: 500;
+color: #505050;
+}
+
+.bc-page{
+font-size: 16px;
+font-weight: 400;
+color: #9F9F9F;
+
+}
+
+.logo-header {
+    font-size: 22px;
+    font-weight: 500;
+    color: #FFFDFD;
+}
+
+.logo-sub-header {
+    font-size: 14px;
+    font-weight: 400;
+    color: #426F98;
+}
+
+.profile-header {
+    font-size: 16px;
+    font-weight: 500;
+    color: #FFFDFD;
+}
+
+.profile-subheader {
+    font-size: 14px;
+    font-weight: 400;
+    color: #426F98;
+}
+
+.footer {
+    position: sticky;
+    top: 100%;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    color: #426F98;
+    font-size: 18px;
+    font-weight: 400;
+}
+
+.nav-menu-item {
+    font-size: 20px;
+    font-weight: 400;
+    color: #82C2FC;
+}
