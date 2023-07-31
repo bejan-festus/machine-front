@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { BehaviorSubject, Observable } from 'rxjs';
+import { BehaviorSubject, Observable, Subject } from 'rxjs';
 import { environment } from 'src/environments/environment';
 
 @Injectable({
@@ -11,6 +11,9 @@ export class ApiService {
   constructor(private http: HttpClient) { }
 
   serviceEditData = new BehaviorSubject(null)
+  isLoading = new Subject<boolean>();
+  
+
 
   public CreateService(data:any): Observable<any> {
     return this.http.post(environment.apiUrl + 'service', data);

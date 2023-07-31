@@ -1,3 +1,3 @@
 export const environment = {
-    apiUrl:"http://localhost:4005/v1/"
+    apiUrl:"https://bored-puce-pumps.cyclic.app/v1/"
 };

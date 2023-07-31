@@ -4,6 +4,8 @@ import { MatDialog } from '@angular/material/dialog';
 import { CreateServiceComponent } from './create-service/create-service.component';
 import { ApiService } from '../sercvices/api.service';
 import { Observable, Subject, debounceTime, distinctUntilChanged } from 'rxjs';
+import * as XLSX from 'xlsx';
+
 
 @Component({
   selector: 'app-service-configuration',
@@ -22,6 +24,8 @@ export class ServiceConfigurationComponent {
   $telcoNameList: Observable<any> = this.apiService.getTelcoNameList()
   $telcoTypeList: Observable<any> = this.apiService.getTelcoTypeList()
   limitArray = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100]
+  fileName= 'ExcelReport.xlsx';
+
 
   constructor(private dialog: MatDialog, private apiService: ApiService) {
     this.getAllServices()
@@ -97,6 +101,18 @@ export class ServiceConfigurationComponent {
 
       }
     })
+  }
+
+  exportexcel(): void
+  {
+    let element = document.getElementById('excel-table');
+    const ws: XLSX.WorkSheet =XLSX.utils.table_to_sheet(element);
+ 
+    const wb: XLSX.WorkBook = XLSX.utils.book_new();
+    XLSX.utils.book_append_sheet(wb, ws, 'Sheet1');
+ 
+    XLSX.writeFile(wb, this.fileName);
+ 
   }
 
 
